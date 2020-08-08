@@ -16,9 +16,9 @@ def retrieve_price(url):
 while True:
         try:
                 #open Savings file
-                savings_workbook = openpyxl.load_workbook('/Users/chowjiaying/Desktop/Finances/Savings.xlsx')
+                savings_workbook = openpyxl.load_workbook('<FILE NAME OF EXCEL DOCUMENT>')
                 #open Portfolio worksheet
-                portfolio = savings_workbook.get_sheet_by_name('Portfolio 2020')
+                portfolio = savings_workbook.get_sheet_by_name('<NAME OF PORTFOLIO SHEET>')
                 
 
                 start_column = 2
@@ -48,6 +48,6 @@ while True:
                 continue
         else:
                 current_time = strftime("%I:%M:%S %p", localtime())
-                savings_workbook.save('/Users/chowjiaying/Desktop/Finances/Savings.xlsx') #override old workbook
+                savings_workbook.save('<FILE NAME OF EXCEL DOCUMENT>') #override old workbook
                 print("Success in updating stock prices at {}!".format(current_time))
                 break
