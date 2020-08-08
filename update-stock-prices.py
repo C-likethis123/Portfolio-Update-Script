@@ -8,7 +8,7 @@ def retrieve_price(url):
 	content = urllib2.urlopen(url).read()
 	soup = BeautifulSoup(content, 'html.parser')
 	#get this from original webscraping script
-	price = soup.find('span', {'class':'Trsdu(0.3s)'}).string
+	price = soup.find('span', {'class':'Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(ib)'}).string  
 	price = float(price) #convert from unicode to string
 	return price
 
@@ -43,6 +43,7 @@ while True:
         except:
                 current_time = strftime("%I:%M:%S %p", localtime())
                 print("An error occured at {}!".format(current_time)) #Don't save anything, figure out logger later
+		print(e)
                 sleep(3600) # try an hour later
                 continue
         else:
